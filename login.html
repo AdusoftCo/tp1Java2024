@@ -15,18 +15,24 @@
     
     <div class="login">
         <div class="text-center mb-3">
-            <img src="imagenes/crud.jpg" alt="Logo" width="100" height="100" class="img-fluid d-block mx-auto">
+            <img src="imagenes/crud.jpg" alt="Logo" width="150" height="150" class="img-fluid d-block mx-auto">
         </div>
 
-        <form action="#" method="post" class="mt-5">
+        <form action="#" method="post" id="loginForm" class="mt-5" novalidate>
             <div class="mb-3">
                 <input type="text" name="email" id="email" class="form-control" 
-                placeholder="Usuario" required>
+                placeholder="E-mail" required>
+                <div class="invalid-feedback" id="emailFeedback">
+                    Por favor ingrese un Email válido.
+                </div>
             </div>
 
             <div class="mb-3">
-                <input type="password" name="password" id="subject" class="form-control" 
+                <input type="password" name="password" id="password" class="form-control" 
                 placeholder="Password" required>
+                <div class="invalid-feedback" id="passwordFeedback">
+                    Por favor ingrese su Contraseña.
+                </div>
                 
                 <div class="recuperar-link">
                     <a href="#" class="disabled-link">recuperar contraseña</a>
@@ -34,11 +40,13 @@
             </div>
                 
             <div class="mb-3 mt-5">
-                <button type="submit" class="btn btn-block" style="width: 40%; background-color: #5728b7; color: white; border-radius: 5px;">Entrar</button>
+                <button type="submit" class="btn btn-block" style="width: 40%; background-color: #5728b7; color: white; border-radius: 5px;">Enviar</button>
             </div>
         </form>
         
     </div>
+
+    <script src="js/loginValidate.js"></script>
     
-</body> 
+</body>     
 </html>
