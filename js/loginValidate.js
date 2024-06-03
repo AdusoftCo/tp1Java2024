@@ -35,7 +35,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     if (isValid) {
-         // Show a success message
+         // Mostrar mensaje de envio de formulario
          alert('Formulario enviado con éxito');
          console.log('Formulario válido y enviado');
      }
