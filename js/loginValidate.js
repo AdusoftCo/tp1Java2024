@@ -35,9 +35,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     if (isValid) {
-        // Presento mensaje de envio de formulario
-        alert('Formulario enviado con éxito');
-        console.log('Formulario válido y enviado');
+        // Envia o manipula el formulario desde aqui
+        // Recoge los datos del formulario
+        const formData = new FormData(this);
+
+        // Envia datos del formulario usando fetch API
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // response data correcta
+            alert('Formulario enviado con éxito');
+            console.log(data);
+        })
+        .catch(error => {
+            // errores
+            alert('Hubo un error al enviar el formulario');
+            console.error(error);
+        });
     }
 
 }, false);
